@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:beautycare/home.dart';
+import 'package:beautycare/login.dart';
+import 'package:beautycare/register.dart';
+import 'package:beautycare/timeline.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget{
@@ -16,11 +19,11 @@ class _SplashScreen extends State<SplashScreen>{
   }
 
   splashscreenStart() async{
-    var duration = const Duration(seconds: 10);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => Login()),
       );
     });
   }
@@ -34,58 +37,23 @@ class _SplashScreen extends State<SplashScreen>{
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Image.asset("assets/logo_beautycare.png",
+            width: 350,
+            height: 350,),
 
-            Text("Beauty Is A",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 30.0,
-            ),),
-
-            Text("Part of You",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 30.0,
-            ),),
-
-            Text("Beauty starts when you decide to be",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 15.0,
-            ),),
-
-            Text("yourself, together with us make you real",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 15.0,
-            ),),
-
-            ElevatedButton.icon(
-              onPressed: (){
-                print("yang kedua");
-              },  
-              label: Text(
-                "Get Started"
+            Padding(
+              padding: 
+              const EdgeInsets.only(top: 5.0, left: 20.0),
+              child: Text("Beauty Care",
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontWeight: FontWeight.bold,
+                fontSize: 56.0,
+                ),),
               ),
-              icon: Icon(Icons.fork_right),),
-
-            Icon(
-              Icons.school,
-              size: 100.0,
-              color: Colors.white,
-            ),
 
             SizedBox(height: 24.0,),
 
-            // Text("SEKOLAHKU",
-            // style: TextStyle(
-            //   color: Colors.white,
-            //   fontWeight: FontWeight.bold,
-            //   fontSize: 30.0,
-            // ),)
           ],
         )
         ),
