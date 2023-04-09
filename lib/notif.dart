@@ -1,3 +1,5 @@
+import 'dart:developer';
+import 'package:beautycare/timeline.dart';
 import 'package:beautycare/detailSpa.dart';
 import 'package:beautycare/home.dart';
 import 'package:beautycare/profile.dart';
@@ -918,7 +920,7 @@ class Notif extends StatelessWidget {
                   size: 25.0,),
                   onPressed: () {
                     Navigator.push(context, 
-                    MaterialPageRoute(builder: ((context)=>DetailSpa())));
+                    MaterialPageRoute(builder: ((context)=>Timeline())));
                   },),
             ),
 

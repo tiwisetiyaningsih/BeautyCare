@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:beautycare/bookService.dart';
 import 'package:beautycare/home.dart';
 import 'package:beautycare/login.dart';
+import 'package:beautycare/paymentfinish.dart';
+import 'package:beautycare/profile.dart';
 import 'package:beautycare/register.dart';
 import 'package:beautycare/timeline.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class _SplashScreen extends State<SplashScreen>{
     return Timer(duration, (){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => BookService()),
+        MaterialPageRoute(builder: (context) => Login()),
       );
     });
   }

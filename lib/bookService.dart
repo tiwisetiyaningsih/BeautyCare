@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:beautycare/home.dart';
+import 'package:beautycare/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:div/div.dart';
@@ -262,48 +263,50 @@ class _OrderPageState extends State<BookService> {
                 height: 30.0,
               ),
               Container(
-                child: Center(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Checkout",
-                      style: TextStyle(color: Colors.white),
+                margin: const EdgeInsets.only(right:15.0, left: 25.0, top: 15.0),
+                padding: const EdgeInsets.only( bottom: 20.0, top: 20.0),
+                child: Div.row([
+                  Div.col([
+                    Text(
+                      'Total (1 service)',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Color.fromARGB(255, 62, 62, 62)
+                        ),
                     ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 255, 118, 156),
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 150.0, vertical: 15.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    Text(
+                      '\Rp. $_selectedPrice',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontWeight: FontWeight.bold
+                        ),
+                    ),
+                  ]),
+                  Container(
+                    margin: const EdgeInsets.only( left: 125.0),
+                    child: Center(
+                      child: ElevatedButton(
+                        child: Text(
+                          "Checkout",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 255, 118, 156),
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 35.0, vertical: 15.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context, 
+                          MaterialPageRoute(builder: ((context)=>Payment())));
+                        },
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: ((context)=>Home())));
-                    },
-                  ),
-                ),
-              ),
-              Container(
-                child: Center(
-                  child: ElevatedButton(
-                    child: Text(
-                      "Checkout",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    style: TextButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 255, 118, 156),
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 150.0, vertical: 15.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: ((context)=>Home())));
-                    },
-                  ),
-                ),
+                  )
+                ])
               )
             ]),
         )

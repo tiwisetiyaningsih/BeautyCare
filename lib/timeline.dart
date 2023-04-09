@@ -1313,7 +1313,7 @@ Padding(
                   size: 25.0,),
                   onPressed: () {
                     Navigator.push(context, 
-                    MaterialPageRoute(builder: ((context)=>DetailSpa())));
+                    MaterialPageRoute(builder: ((context)=>Timeline())));
                   },),
             ),
 

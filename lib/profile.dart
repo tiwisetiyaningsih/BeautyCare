@@ -2,6 +2,7 @@ import 'package:beautycare/detailSpa.dart';
 import 'package:beautycare/home.dart';
 import 'package:beautycare/login.dart';
 import 'package:beautycare/notif.dart';
+import 'package:beautycare/timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:div/div.dart';
 
@@ -200,30 +201,32 @@ class Profile extends StatelessWidget {
                         textAlign: TextAlign.left,
                         ),
                       ),
-
-                      ElevatedButton(
-                        child: Text(
-                          "Logout",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 255, 118, 156),
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 100.0, vertical: 15.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        onPressed: () {
-                            Navigator.push(context, 
-                            MaterialPageRoute(builder: ((context)=>Login())));
-                          }
-                      ),
                     ]),
-                ])
+                ]),
                 ],
             ),
+            SizedBox(height: 100.0),
 
+            Center(
+              child: ElevatedButton(
+                child: Text(
+                  "Logout",
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 255, 118, 156),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () {
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: ((context)=>Login())));
+                  }
+              ),
+            )
           ]
           )
       ),
@@ -265,7 +268,7 @@ class Profile extends StatelessWidget {
                   size: 25.0,),
                   onPressed: () {
                     Navigator.push(context, 
-                    MaterialPageRoute(builder: ((context)=>DetailSpa())));
+                    MaterialPageRoute(builder: ((context)=>Timeline())));
                   },),
             ),
 
