@@ -1,3 +1,4 @@
+import 'package:beautycare/bookService.dart';
 import 'package:beautycare/home.dart';
 import 'package:flutter/material.dart';
 import 'package:div/div.dart';
@@ -172,7 +173,7 @@ class DetailSalon extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: ((context)=>DetailSalon())));
+                  MaterialPageRoute(builder: ((context)=>BookService())));
                 },
               ),
             )

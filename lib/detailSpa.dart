@@ -173,7 +173,7 @@ class DetailSpa extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: ((context)=>Home())));
+                  MaterialPageRoute(builder: ((context)=>BookService())));
                 },
               ),
             )
