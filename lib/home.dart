@@ -50,7 +50,7 @@ class _BelajarNavBarState extends State<BelajarNavBar> {
 
               Padding(
               padding: const EdgeInsets.only(top: 50.0, left: 20.0),
-              child: Text("Hello, Sulleyvans",
+              child: Text("Hello, Tes Brow",
               style: TextStyle(
                 color: Color.fromARGB(255, 0, 0, 0),
                 fontWeight: FontWeight.bold,

@@ -73,7 +73,7 @@ class Profile extends StatelessWidget {
                     
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0),
-                        child: Text("Sulleyvans",
+                        child: Text("Tes Brow",
                         style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class Profile extends StatelessWidget {
                     
                       Padding(
                         padding: const EdgeInsets.only(top: 5.0),
-                        child: Text("sulleyvans@gmail.com",
+                        child: Text("tes@gmail.com",
                         style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontWeight: FontWeight.bold,

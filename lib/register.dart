@@ -12,6 +12,16 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
   @override
+  String _selectedOption = 'Laki laki';
+  List<String> _options = ['Laki laki', 'Perempuan'];
+
+
+
+  void _updatePrice(String option) {
+    setState(() {
+      _selectedOption = option;
+    });
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
@@ -71,24 +81,6 @@ class _RegisterState extends State<Register> {
                 padding: 
                 const EdgeInsets.only(top: 5.0, right: 25.0, left: 25.0),
                 child: TextFormField(
-                  decoration: new InputDecoration(
-                    hintText: "Masukkan Username Anda",
-                    labelText: "Username",
-                    icon: Icon(Icons.person_outline),
-                  ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'username tidak boleh kosong';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-
-              Padding(
-                padding: 
-                const EdgeInsets.only(top: 5.0, right: 25.0, left: 25.0),
-                child: TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: new InputDecoration(
                     hintText: "Masukkan Email Anda",
@@ -121,22 +113,29 @@ class _RegisterState extends State<Register> {
                   },
                 ),
               ),
-
-              Padding(
-                padding:
-                    const EdgeInsets.only(top: 5.0, bottom: 40.0, right: 25.0, left: 25.0),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: new InputDecoration(
-                    labelText: "Confirm Password",
-                    icon: Icon(Icons.lock_open_outlined),
+              
+              Container(
+                margin: const EdgeInsets.only(left:65.0,right: 25.0, top: 15.0, bottom: 30.0),
+                child: DropdownButtonFormField<String>(
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 16.0
                   ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'confirm password tidak boleh kosong';
-                    }
-                    return null;
+                  iconDisabledColor: Color.fromARGB(255, 28, 18, 21),
+                  value: _selectedOption,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedOption = value!;
+                    });
                   },
+                  items: _options.map((option) {
+                    return DropdownMenuItem<String>(
+                      value: option,
+                      child: Text(option),
+                    );
+                  }).toList(),
+                  decoration: InputDecoration(
+                  ),
                 ),
               ),
                           

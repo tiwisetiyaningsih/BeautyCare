@@ -3,16 +3,21 @@ import 'package:beautycare/home.dart';
 import 'package:beautycare/leadingappbar.dart';
 import 'package:beautycare/register.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
 
   @override
   _LoginState createState() => new _LoginState();
 }
 
+
 class _LoginState extends State<Login>  {
   final _formKey = GlobalKey<FormState>();
+  late String _email;
+  late String _password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,28 +55,10 @@ class _LoginState extends State<Login>  {
               fontSize: 15.0,
                 ),
               ),
-          
-              Padding(
-                padding: 
-                const EdgeInsets.only(top: 30.0, right: 25.0, left: 25.0),
-                child: TextFormField(
-                  decoration: new InputDecoration(
-                    hintText: "Masukkan Username Anda",
-                    labelText: "Username",
-                    icon: Icon(Icons.person_outline),
-                  ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'username tidak boleh kosong';
-                    }
-                    return null;
-                  },
-                ),
-              ),
 
               Padding(
                 padding: 
-                const EdgeInsets.only(top: 5.0, right: 25.0, left: 25.0),
+                const EdgeInsets.only(top: 30.0, right: 25.0, left: 25.0),
                 child: TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: new InputDecoration(
@@ -84,6 +71,9 @@ class _LoginState extends State<Login>  {
                       return 'email tidak boleh kosong';
                     }
                     return null;
+                  },
+                  onSaved: (value) {
+                    _email = value!;
                   },
                 ),
               ),
@@ -102,6 +92,9 @@ class _LoginState extends State<Login>  {
                       return 'password tidak boleh kosong';
                     }
                     return null;
+                  },
+                  onSaved: (value) {
+                    _password = value!;
                   },
                 ),
               ),
